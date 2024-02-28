@@ -62,6 +62,10 @@ body::after {
   border: 2px solid #4dff4d;
   animation: flickerAnimation 1.5s infinite;
 }
+#name_header a {
+  text-decoration: none;
+  color: #4dff4d;
+}
 .github-link {
   display: inline-block; /* Make the link inline with the text */
   margin-top: 20px; /* Space above the link */
@@ -83,4 +87,43 @@ body::after {
   bottom: 20px;
   text-align: center;
   z-index: 10;
+}
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: min-content;
+}
+.menu a {
+  display: circle;
+  font-family: "Zen Dots", monospace;
+  font-size: 4vmin;
+  text-decoration: none;
+  color: #4dff4d;
+  padding: 0.5rem 0;
+  transform: scale(0.95);
+  opacity: 0.25;
+  transition: scale 550ms linear, opacity 250ms linear;
+  /* animation: flickerAnimation 2s infinite; */
+}
+.menu a:first-of-type {
+  transform: scale(1);
+  opacity: 1;
+}
+.menu:hover a:not(:hover) {
+  transform: scale(0.95);
+  opacity: 0.25;
+}
+.menu a:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+.about-site-header h1 {
+  color: #4dff4d;
+  text-align: center;
+  padding: 20px;
+  font-family: "Zen Dots", monospace;
+  font-size: 30px;
 }
