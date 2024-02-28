@@ -110,7 +110,7 @@ body::after {
 }
 .menu a:first-of-type {
   transform: scale(1);
-  opacity: 1;
+  opacity: 2;
 }
 .menu:hover a:not(:hover) {
   transform: scale(0.95);
