@@ -141,6 +141,10 @@ body::after {
   text-align: center;
   font-family: "Zen Dots", monospace;
 }
+.about-name {
+  text-decoration: None;
+  color: #4dff4d;
+}
 .work-experience-list {
   color: #ffdd03c5;
   font-family: "Zen Dots", monospace;
