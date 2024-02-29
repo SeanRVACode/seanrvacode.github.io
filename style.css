@@ -7,6 +7,11 @@ html {
   background-color: #0a0a0a; /* Dark background for the whole page */
   position: relative; /* Needed for absolute positioning of pseudo-elements */
   overflow: hidden; /* Hide overflow to maintain the tape within the viewport */
+  overflow-y: auto;
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 body::before,
 body::after {
@@ -29,6 +34,10 @@ body::before {
 }
 body::after {
   bottom: 0; /* Tape at the bottom */
+}
+body::before,
+body::after {
+  position: fixed;
 }
 .banner {
   color: #4dff4d; /* Neon green text color */
@@ -126,4 +135,15 @@ body::after {
   padding: 20px;
   font-family: "Zen Dots", monospace;
   font-size: 30px;
+}
+.about-site-header {
+  color: #4dff4d;
+  text-align: center;
+  font-family: "Zen Dots", monospace;
+}
+.work-experience-list {
+  color: #ffdd03c5;
+  font-family: "Zen Dots", monospace;
+  text-align: left;
+  width: fit-content;
 }
