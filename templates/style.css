@@ -1,0 +1,153 @@
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0a0a; /* Dark background for the whole page */
+  position: relative; /* Needed for absolute positioning of pseudo-elements */
+  overflow: hidden; /* Hide overflow to maintain the tape within the viewport */
+  overflow-y: auto;
+}
+body {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 20px; /* Height of the tape */
+  background: repeating-linear-gradient(
+    45deg,
+    #4dff4d,
+    #4dff4d 10px,
+    #0a0a0a 10px,
+    #0a0a0a 20px /* Alternating pattern for a striped effect */
+  );
+  z-index: 10;
+}
+body::before {
+  top: 0; /* Tape at the top */
+}
+body::after {
+  bottom: 0; /* Tape at the bottom */
+}
+body::before,
+body::after {
+  position: fixed;
+}
+.banner {
+  color: #4dff4d; /* Neon green text color */
+  padding: 20px;
+  text-align: center;
+  font-family: "Zen Dots", monospace; /* Monospace font for a techy look */
+  font-size: 20px;
+  box-shadow: 0 2px 5px rgba(0, 255, 0, 0.3); /* Green glow */
+  border: 2px solid #4dff4d; /* Solid border to match text color */
+  animation: flickerAnimation 1.5s infinite; /* Apply the flicker animation to the banner */
+  position: relative; /* Ensure the banner is positioned correctly */
+  z-index: 20; /* Above the tape */
+}
+@keyframes flickerAnimation {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#name_header {
+  color: #4dff4d;
+  text-align: center;
+  font-size: 30px;
+  padding: 20px;
+  font-family: "Zen Dots", monospace;
+  border: 2px solid #4dff4d;
+  animation: flickerAnimation 1.5s infinite;
+}
+#name_header a {
+  text-decoration: none;
+  color: #4dff4d;
+}
+.github-link {
+  display: inline-block; /* Make the link inline with the text */
+  margin-top: 20px; /* Space above the link */
+  color: #4dff4d; /* Neon green color to match the theme */
+  text-decoration: none; /* Remove underline from links */
+  font-family: "Courier New", monospace; /* Monospace font to match the banner */
+  border: 1px solid #4dff4d; /* Border to make it look like a button */
+  padding: 5px 10px; /* Padding inside the border */
+  transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+  text-decoration: none;
+}
+
+.github-link:hover {
+  background-color: #4dff4d; /* Background color on hover */
+  color: #0a0a0a; /* Text color on hover */
+  align-content: center;
+}
+.link-container {
+  bottom: 20px;
+  text-align: center;
+  z-index: 10;
+}
+.menu {
+  position: absolute;
+  top: 50%;
+  left: 1%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: min-content;
+}
+.menu a {
+  display: circle;
+  font-family: "Zen Dots", monospace;
+  font-size: 4vmin;
+  text-decoration: none;
+  color: #4dff4d;
+  padding: 0.5rem 0;
+  transform: scale(0.95);
+  opacity: 0.25;
+  transition: scale 550ms linear, opacity 250ms linear;
+  /* animation: flickerAnimation 2s infinite; */
+}
+.menu a:first-of-type {
+  transform: scale(1);
+  opacity: 2;
+}
+.menu:hover a:not(:hover) {
+  transform: scale(0.95);
+  opacity: 0.25;
+}
+.menu a:hover {
+  transform: scale(1);
+  opacity: 1;
+}
+.about-site-header h1 {
+  color: #4dff4d;
+  text-align: center;
+  padding: 20px;
+  font-family: "Zen Dots", monospace;
+  font-size: 30px;
+}
+.about-site-header {
+  color: #4dff4d;
+  text-align: center;
+  font-family: "Zen Dots", monospace;
+}
+.about-name {
+  text-decoration: None;
+  color: #4dff4d;
+}
+.work-experience-list {
+  color: #ffdd03c5;
+  font-family: "Zen Dots", monospace;
+  text-align: left;
+  width: fit-content;
+}
