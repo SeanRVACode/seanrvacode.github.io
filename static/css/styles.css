@@ -11339,7 +11339,7 @@ header.masthead .h1 {
 #portfolio .container-lg .portfolio-box .portfolio-box-caption,
 #portfolio .container-xl .portfolio-box .portfolio-box-caption,
 #portfolio .container-xxl .portfolio-box .portfolio-box-caption {
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: center;
   flex-direction: column;
