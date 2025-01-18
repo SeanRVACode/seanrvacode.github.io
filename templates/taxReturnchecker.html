@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tax Return Status</title>
+  </head>
+  <body>
+    <div id="main">
+      <div><h3>Live Status of your tax return:</h3></div>
+      <h1 id="status" style="text-align: center">{{ status }}</h1>
+      <button onclick="updateStatus()">Update Status</button>
+      <style>
+        #main {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          text-align: center;
+        }
+        body {
+          background-color: hsl(176, 87%, 37%);
+          font-family: Arial, sans-serif;
+          color: white;
+        }
+      </style>
+    </div>
+    <script>
+      function updateStatus() {
+        fetch("/getStatus")
+          .then((response) => response.json())
+          .then((data) => {
+            document.getElementById("status").textContent = data.status;
+          });
+      }
+    </script>
+  </body>
+</html>
